@@ -1,0 +1,1 @@
+# Vvertigoo.Authentication.Bearer
