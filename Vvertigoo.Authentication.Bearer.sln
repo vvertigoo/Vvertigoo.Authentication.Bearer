@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Vvertigoo.Authentication.Bearer", "src\Vvertigoo.Authentication.Bearer.xproj", "{3EF5DB3B-090C-43EF-9F4F-2546B2ADAB52}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Vvertigoo.Authentication.Bearer", "Vvertigoo.Authentication.Bearer\Vvertigoo.Authentication.Bearer.xproj", "{3EF5DB3B-090C-43EF-9F4F-2546B2ADAB52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
