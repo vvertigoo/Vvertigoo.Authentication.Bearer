@@ -86,15 +86,12 @@ namespace Vvertigoo.Authentication.Bearer
         private static string CreateJsonResponse(AuthenticationTicket ticket, string token)
         {
             var expires_in = ticket.Properties.ExpiresUtc.Value - ticket.Properties.IssuedUtc.Value;
-            return "{\"issued\":\""
-                + ticket.Properties.IssuedUtc.Value.ToString("r")
-                + "\",\"expires\":\""
-                + ticket.Properties.ExpiresUtc.Value.ToString("r")
-                + "\",\"expires_in\":\""
-                + expires_in.TotalSeconds
-                + "\",\"access_token\":\""
-                + token
-                + "\"}";
+            var result = new BearerJsonResult();
+            result.Add("issued", ticket.Properties.IssuedUtc.Value.ToString("r"));
+            result.Add("expires", ticket.Properties.ExpiresUtc.Value.ToString("r"));
+            result.Add("expires_in", expires_in.TotalSeconds.ToString());
+            result.Add("access_token", token);
+            return result.ToString();
         }
 
         protected override async Task HandleSignInAsync(SignInContext signin)
