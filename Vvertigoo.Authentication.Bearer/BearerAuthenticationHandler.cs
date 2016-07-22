@@ -7,6 +7,7 @@ using Vvertigoo.Authentication.Bearer.Events;
 using System.IO;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Http.Features.Authentication;
+using System.Text;
 
 namespace Vvertigoo.Authentication.Bearer
 {
