@@ -80,7 +80,12 @@ namespace Vvertigoo.Authentication.Bearer
             Response.Headers["Cache-Control"] = "no-cache";
             Response.Headers["Expires"] = "-1";
             Response.Headers["Pragma"] = "no-cache";
-            Response.Headers["X-Auth-Object"] = response;
+
+            var responseByteArray = Encoding.UTF8.GetBytes(response);
+            Response.Body.Flush();
+            Response.Body.WriteAsync(responseByteArray, 0, responseByteArray.Length);
+            Response.ContentType = "application/json; charset=UTF-8";
+            Response.ContentLength = responseByteArray.Length;
         }
 
         private static string CreateJsonResponse(AuthenticationTicket ticket, string token)
