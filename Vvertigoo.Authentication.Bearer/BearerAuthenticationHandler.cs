@@ -83,10 +83,8 @@ namespace Vvertigoo.Authentication.Bearer
             Response.Headers["Pragma"] = "no-cache";
 
             var responseByteArray = Encoding.UTF8.GetBytes(response);
-            Response.Body.Flush();
+            Response.ContentType = "application/json; charset=utf-8";
             Response.Body.WriteAsync(responseByteArray, 0, responseByteArray.Length);
-            Response.ContentType = "application/json; charset=UTF-8";
-            Response.ContentLength = responseByteArray.Length;
         }
 
         private static string CreateJsonResponse(AuthenticationTicket ticket, string token)
