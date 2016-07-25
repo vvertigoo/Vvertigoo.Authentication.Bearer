@@ -55,7 +55,7 @@ public async Task<IActionResult> SignIn(string email, string password)
 }
 ```
 
-You will get token via response body`. It contains JSON object with 4 fields: `issued`, `expires`, `expires_in` and `access_token`
+You will get token via response body. It contains JSON object with 4 fields: `issued`, `expires`, `expires_in` and `access_token`
 
 After you receive token you can use it in your requests - put token into `Authorization` header and place `[Authorize]` attribute on your controller or action.
 
